@@ -1,0 +1,119 @@
+:root {
+    --bg-clr: #000033;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .Navigator {
+    margin-bottom:6vh;
+    width: 100vw;
+    height: 70px;
+    background: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .Navigator ul {
+    display: flex;
+    width: 350px;
+  }
+  .Navigator ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+  .Navigator ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-aling: center;
+    font-weight: 500;
+  }
+  .Navigator ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5rem;
+    text-aling: center;
+    transition: 0.5s;
+    color: var(--bg-clr);
+  }
+  
+  .Navigator ul li.active a .icon {
+    transform: translateY(30px);
+  }
+  
+  .Navigator ul li a .text {
+    overflow: hidden;
+    position: absolute;
+    color: var(--bg-clr);
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(-s60px);
+  }
+  .Navigator ul li.active a .text {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  .indicador {
+    position: absolute;
+    top: 40%;
+    width: 70px;
+    height: 70px;
+    background: #ff3333;
+    border-radius: 50%;
+    border: 6px solid var(--bg-clr);
+    transition: 0.5s;
+  }
+  .indicador::before {
+    content: "";
+    position: absolute;
+    bottom: 33%;
+    left: -38px;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border-bottom-right-radius: 30px;
+    box-shadow: 2px 12px 0px 0px var(--bg-clr);
+  }
+  .indicador::after {
+    content: "";
+    position: absolute;
+    bottom: 33%;
+    right: -38px;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border-bottom-left-radius: 30px;
+    box-shadow: -2px 12px 0 0 var(--bg-clr);
+  }
+  
+  .Navigator ul li:nth-child(1).active ~ .indicador {
+    transform: translateX(calc(70px * 0));
+  }
+  .Navigator ul li:nth-child(2).active ~ .indicador {
+    transform: translateX(calc(70px * 1));
+  }
+  .Navigator ul li:nth-child(3).active ~ .indicador {
+    transform: translateX(calc(70px * 2));
+  }
+  .Navigator ul li:nth-child(4).active ~ .indicador {
+    transform: translateX(calc(70px * 3));
+  }
+  
